@@ -7,3 +7,16 @@
 * By default, the model only trains on the last character with the given context length of each batch. If you want to train on more data at each iteration, use *x_idx* or *x_int*. At *block_size = 256*, *x_idx = [1:9]* also trains on the first 8 characters with a context length from 1 to 8, *x_int = [64,128]* makes for each batch 4 additional subsamples of the length 64 and 2 additional subsamples of the length 128, for example. It is recommended to train more intensive on context length between 8 and 32. 
 * This (modified) model is for CPU with limited resources, I have no idea how it performs on GPU.
 If you aim for higher quality, you can apply this method to a more full-fledged model like nanoGPT by karpathy: https://github.com/karpathy/nanoGPT
+* UPDATE: I have further reduced the number of parameters to 1.68M (gpt_embedding_only_s.py, gpt_trained_s.pt), the quality seems unchanged.
+
+Example:
+```console
+The top in a world. You virt, the ban't,
+Wallr most us, he hath as from all nock,
+The cheke my son me queet, give me in!
+For Juwe'le:
+Be Lord Cancion just and kind.
+If Petter for of death;
+Slay of world he while not a beling the sheep;
+The Warwick, the sweares pake shall not.
+```
